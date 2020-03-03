@@ -1,0 +1,376 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Собственно сам слайдер */
+.slider{
+  max-width: 80%;
+  position: relative;
+  
+  height: 300px;
+  margin-bottom: 130px;
+  margin: auto;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+/* Кнопки вперед и назад */
+.slider .prev, .slider .next {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+
+.slider .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+/* При наведении на кнопки добавляем фон кнопок */
+
+.slider .prev:hover,
+.slider .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Заголовок слайда */
+.slideText {
+  position: absolute;
+  color: #fff;
+  font-size: 35px;
+  /* Выравнивание текста по горизонтали и по вертикали*/
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Тень*/
+  text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+}
+
+
+/* Кружочки */
+
+.slider-dots {
+text-align: center;
+vertical-align: middle;
+
+}
+.slider-dots_item{
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.slider-dots_item:hover {
+  background-color: #aaa;
+}
+
+
+/* Анимация слайдов */
+
+.slider .item {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+      opacity: .4
+  }
+  to {
+      opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+      opacity: .4
+  }
+  to {
+      opacity: 1
+  }
+}
+
+
+.Slider{
+  background-color: black;
+  margin: 0px auto;
+}
+
+.Container{
+  width: 1024px;
+  margin: 0px auto;
+  display: inline-block;
+}
+
+.Slide1{
+  width: 1024px;
+  height: 768px;
+  background-repeat: no-repeat;
+  background-image: url('../src/img/morecopy.jpg');
+}
+
+h1{
+  margin: 0 auto;
+  padding-top: 130px;
+  width: 791px;
+  text-align: left;
+  color: #0d319c;
+  font-size: 50px;
+  font-family: GothamPro;
+  font-weight: normal;
+}
+
+h2{
+  color: #0d319c;
+  font-size: 20px;
+  font-family: GothamPro;
+  font-weight: normal;
+ }
+
+ .Text1{text-align: center;
+  margin: 0 auto;
+  padding-top: 0px;
+  padding-left: 300px;
+  width: 791px;
+  height: 100px;
+ }
+
+ .Text2{
+  text-align: left;
+  margin: 0 auto;
+  padding-top: 0px;
+  padding-left: 190px;
+  width: 791px;
+ }
+ .Text3{
+  margin-top: 30px;
+  margin-left: 380px;
+  padding-top: 20px;
+  display: inline-block;
+ }
+ .Text4{
+  margin-top: 0;
+  margin-left: 50px;
+  padding-top: 0px;
+  top: -50px;
+  padding-left: 235px;
+  display: inline-block;
+  text-align: center;
+ }
+
+ .Slide{
+  display: grid;
+  grid-template-areas: 
+  "s s1";
+
+  grid-template-columns: 1fr 1px;
+ width: 1024px;
+
+ background-repeat: no-repeat;
+ 
+}
+.Slide_r{
+  display: inline-block;
+  margin-top: 384px;
+  grid-area: s1;
+  padding-left: 30px;
+  left: 0px;
+}
+.sec1{
+  position: fixed;
+  display: inline-block;
+  padding-left: 60px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-image: url('../src/img/pagination.png');
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: -60px;
+}
+
+ .Slide2{
+   display: grid;
+   grid-area: s;
+   grid-template-areas: 
+   "i1 i2"
+   "t t"
+   "i4 i5";
+   grid-template-rows:230px 135px 1fr;
+   grid-template-columns: 1fr 1fr;
+  width: 1024px;
+  height: 768px;
+  background-repeat: no-repeat;
+  background-image: url('../src/img/morecopy2.jpg');
+}
+.Slider-text{
+  color: #fff;
+  grid-area: t;
+  font-size: 50px;
+}
+.Slider-text1{
+  margin: 0px auto;
+  width: 410px;
+  height: 114px;
+  font-family: GothamPro;
+  font-weight: 300;
+}
+.Img1{
+  grid-area: i1;
+}
+.Img11{
+ margin-top: 155px;
+ margin-left: 82px;
+ padding: 20px;
+  background-image: url('../src/img/icecopy6.png');
+  background-repeat: no-repeat;
+}
+
+.Img2{
+  margin: 0;
+  grid-area: i2;
+}
+.Img12{
+  margin-top: 40px;
+  margin-left: 365px;
+  justify-content: right;
+ padding-top: 10px;
+ padding-left: 20px;
+ padding-bottom: 200px;
+ padding-right: 20px;
+  background-image: url('../src/img/icecopy3.png');
+  background-repeat: no-repeat;
+}
+
+.Img4{
+  grid-area: i4;
+}
+.Img14{
+  margin-top: 75px;
+  margin-left: 230px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 80px;
+  background-image: url('../src/img/icecopy5.png');
+  background-repeat: no-repeat;
+}
+
+.Img5{
+  grid-area: i5;
+}
+.Img15{
+  margin-top: 240px;
+  margin-left: 190px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 60px;
+  background-image: url('../src/img/icecopy4.png');
+  background-repeat: no-repeat;
+}
+
+
+.Slide3{
+  grid-area: s;
+  width: 1024px;
+  height: 768px;
+  background-repeat: no-repeat;
+  background-image: url('../src/img/slide3.jpg');
+}
+
+
+.Slider111{
+  width: 100%;
+  height: 100%;
+  background-image: url('../src/img/slide33.jpg');
+  background-color:  rgba(11, 0, 0, 0,2);
+  top: 50px;
+  padding-top: 20px;
+margin-bottom: 0px;
+}
+
+.img11{
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.img12{
+  margin-top: 0px;
+  margin-left: 45px;
+}
+
+.img13{
+  margin-top: 17px;
+  margin-left: 0px;
+}
+
+.sidebar{
+  width: 10px;
+  height: 100px;
+  color:  #ffc222;
+  position: fixed;
+  margin: 10px;
+  top: 300px;
+  right: 150px;
+
+}
